@@ -1,29 +1,29 @@
 import 'dart:io';
-
 import 'Car.dart';
 
 class Sale extends Car {
-  late String CustomerName;
-  late String Address;
-  late int Contactinfo;
+  String customerName = "";
+  String address = "";
+  int contactInfo = 0;
 
-  Sale(_CarName, _Model, _Steering, _CarPrice, _Made, _Transmission)
+  Sale(String _CarName, int _Model, String _Steering, int _CarPrice,
+      String _Made, String _Transmission)
       : super(_CarName, _Model, _Steering, _CarPrice, _Made, _Transmission);
 
-  Customer() {
-    stdout.write("Enter UR Name : ");
-    this.CustomerName = stdin.readLineSync()!;
-    stdout.write("Enter ur Address : ");
-    this.Address = stdin.readLineSync()!;
-    stdout.write("Enter ur contact Number : ");
-    this.Contactinfo = int.parse(stdin.readLineSync()!);
+  void getCustomerDetails() {
+    stdout.write("Enter Your Name: ");
+    customerName = stdin.readLineSync()!;
+    stdout.write("Enter Your Address: ");
+    address = stdin.readLineSync()!;
+    stdout.write("Enter Your Contact Number: ");
+    contactInfo = int.parse(stdin.readLineSync()!);
   }
 
   @override
-  info() {
-    print("Customer Name : $CustomerName");
-    print("Customer Address : $Address");
-    print("Contact No : $Contactinfo");
+  void info() {
+    print("Customer Name: $customerName");
+    print("Customer Address: $address");
+    print("Contact No: $contactInfo");
     super.info();
   }
 }

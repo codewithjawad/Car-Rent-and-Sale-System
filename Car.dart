@@ -1,6 +1,6 @@
 class Car {
   late String CarName;
-  late String Model;
+  late int Model;
   late String Steering;
   late int CarPrice;
   late String Made;

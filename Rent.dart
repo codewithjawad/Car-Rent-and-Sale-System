@@ -1,42 +1,42 @@
 import 'dart:io';
-
 import 'Car.dart';
 
 class Rent extends Car {
-  late String CustomerName;
-  late String Address;
-  late int Contactinfo;
-  late int RentPerDay = 0;
-  late int time = 0;
+  String customerName = "";
+  String address = "";
+  int contactInfo = 0;
+  int rentPerDay = 0;
+  int time = 0;
 
-  Rent(_CarName, _Model, _Steering, _CarPrice, _Made, _Transmission)
+  Rent(String _CarName, int _Model, String _Steering, int _CarPrice,
+      String _Made, String _Transmission)
       : super(_CarName, _Model, _Steering, _CarPrice, _Made, _Transmission);
 
-  Customer() {
-    stdout.write("Enter UR Name : ");
-    this.CustomerName = stdin.readLineSync()!;
-    stdout.write("Enter ur Address : ");
-    this.Address = stdin.readLineSync()!;
-    stdout.write("Enter ur contact Number : ");
-    this.Contactinfo = int.parse(stdin.readLineSync()!);
-    stdout.write("Enter amount of  Rent per day : ");
-    this.RentPerDay = int.parse(stdin.readLineSync()!);
-    stdout.write("Enter a time car rented for  : ");
-    this.time = int.parse(stdin.readLineSync()!);
+  void getCustomerDetails() {
+    stdout.write("Enter Your Name: ");
+    customerName = stdin.readLineSync()!;
+    stdout.write("Enter Your Address: ");
+    address = stdin.readLineSync()!;
+    stdout.write("Enter Your Contact Number: ");
+    contactInfo = int.parse(stdin.readLineSync()!);
+    stdout.write("Enter Rent per Day: ");
+    rentPerDay = int.parse(stdin.readLineSync()!);
+    stdout.write("Enter Number of Days Car is Rented for: ");
+    time = int.parse(stdin.readLineSync()!);
   }
 
-  Rentcharges() {
-    return this.RentPerDay * this.time;
+  int calculateRentCharges() {
+    return rentPerDay * time;
   }
 
   @override
-  info() {
-    print("Customer Name : $CustomerName");
-    print("Customer Address : $Address");
-    print("Contact No : $Contactinfo");
+  void info() {
+    print("Customer Name: $customerName");
+    print("Customer Address: $address");
+    print("Contact No: $contactInfo");
     super.info();
-    print("Rent per Day : Rs $RentPerDay");
-    print("Car Rented for  : $time Days");
-    print("Total Charges : Rs $Rentcharges()");
+    print("Rent per Day: Rs $rentPerDay");
+    print("Car Rented for: $time Days");
+    print("Total Charges: Rs ${calculateRentCharges()}");
   }
 }
