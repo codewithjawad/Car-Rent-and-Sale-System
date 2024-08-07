@@ -10,7 +10,7 @@ void main(List<String> args) {
     Car("GRANDE", 2020, "MANUAL", 15000, "TOYOTA", "Power"),
     Car("DAYZ", 2018, "Auto", 15000, "NISSAN", "Power"),
     Car("WAGON-R", 2021, "Auto", 10000, "SUZUKI", "Power"),
-    Car("CIVIC", 2024, "Auto", 20000, "HONDA", "Power"),
+    Car("CIVIC", 2024, "Auto", 20000, "HONDA", "Power")
   ];
 
   Admin admin = Admin("GRANDE", 2020, "MANUAL", 15000, "TOYOTA", "Power");
